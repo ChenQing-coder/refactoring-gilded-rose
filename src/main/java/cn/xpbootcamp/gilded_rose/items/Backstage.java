@@ -10,4 +10,9 @@ public class Backstage extends Item {
     public boolean isBackstage() {
         return true;
     }
+
+    @Override
+    public void updateQualityWhenExpiration() {
+        quality = 0;
+    }
 }

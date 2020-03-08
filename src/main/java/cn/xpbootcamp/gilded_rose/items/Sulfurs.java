@@ -10,4 +10,14 @@ public class Sulfurs extends Item {
     public boolean isSulfurs() {
         return true;
     }
+
+    @Override
+    public void updateSellIn() {
+        return;
+    }
+
+    @Override
+    public void updateQualityWhenExpiration() {
+        return;
+    }
 }

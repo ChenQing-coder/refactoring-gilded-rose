@@ -59,31 +59,19 @@ public class Item {
     }
 
     public void updateQualityWhenExpiration() {
-        if (!isAgedBrie()) {
-            if (!isBackstage()) {
-                if (quality > 0) {
-                    if (!isSulfurs()) {
-                        quality = quality - 1;
-                    }
-                }
-            } else {
-                quality = 0;
-            }
-        } else {
-            if (quality < 50) {
-                quality = quality + 1;
-            }
+        if (quality > 0) {
+            quality = quality - 1;
         }
+
     }
+
 
     public boolean isExpired() {
         return sellIn < 0;
     }
 
     public void updateSellIn() {
-        if (!isSulfurs()) {
-            sellIn = sellIn - 1;
-        }
+        sellIn = sellIn - 1;
     }
 
     public boolean isSulfurs() {
