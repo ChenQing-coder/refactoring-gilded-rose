@@ -1,9 +1,12 @@
 package cn.xpbootcamp.gilded_rose;
 
+import cn.xpbootcamp.gilded_rose.items.AgedBrie;
+import cn.xpbootcamp.gilded_rose.items.Backstage;
+import cn.xpbootcamp.gilded_rose.items.Regular;
+import cn.xpbootcamp.gilded_rose.items.Sulfurs;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
-import static cn.xpbootcamp.gilded_rose.Item.*;
 
 public class TextTestFixture {
     public static void main(String[] args) {
@@ -17,17 +20,17 @@ public class TextTestFixture {
         printStream.println("OMGHAI!");
 
         Item[] items = new Item[]{
-                createRegular("+5 Dexterity Vest", 10, 20), //
-                createAgedBrie(2, 0),
-                createRegular("Elixir of the Mongoose", 5, 7), //
-                createSulfurs(0, 80), //
-                createSulfurs(-1, 80),
-                createBackstage(15, 20),
-                createBackstage(10, 49),
-                createBackstage(5, 49),
-                createBackstage(1, 20),
+                new Regular("+5 Dexterity Vest", 10, 20), //
+                new AgedBrie(2, 0),
+                new Regular("Elixir of the Mongoose", 5, 7), //
+                new Sulfurs(0, 80), //
+                new Sulfurs(-1, 80),
+                new Backstage(15, 20),
+                new Backstage(10, 49),
+                new Backstage(5, 49),
+                new Backstage(1, 20),
                 // this conjured item does not work properly yet
-                createRegular("Conjured Mana Cake", 3, 6)};
+                new Regular("Conjured Mana Cake", 3, 6)};
 
         GildedRose app = new GildedRose(items);
 

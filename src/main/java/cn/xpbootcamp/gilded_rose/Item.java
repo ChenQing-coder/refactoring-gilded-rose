@@ -8,22 +8,6 @@ public class Item {
 
     public int quality;
 
-    public static Item createBackstage(int sellIn, int quality) {
-        return new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
-    }
-
-    public static Item createAgedBrie(int sellIn, int quality) {
-        return new Item("Aged Brie", sellIn, quality);
-    }
-
-    public static Item createSulfurs(int sellIn, int quality) {
-        return new Item("Sulfuras, Hand of Ragnaros", sellIn, quality);
-    }
-
-    public static Item createRegular(String name, int sellIn, int quality) {
-        return new Item(name, sellIn, quality);
-    }
-
     public Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
@@ -49,7 +33,7 @@ public class Item {
         if (!isAgedBrie()
                 && !isBackstage()) {
             if (quality > 0) {
-                if (!isSulfuras()) {
+                if (!isSulfurs()) {
                     quality = quality - 1;
                 }
             }
@@ -78,7 +62,7 @@ public class Item {
         if (!isAgedBrie()) {
             if (!isBackstage()) {
                 if (quality > 0) {
-                    if (!isSulfuras()) {
+                    if (!isSulfurs()) {
                         quality = quality - 1;
                     }
                 }
@@ -97,20 +81,20 @@ public class Item {
     }
 
     public void updateSellIn() {
-        if (!isSulfuras()) {
+        if (!isSulfurs()) {
             sellIn = sellIn - 1;
         }
     }
 
-    public boolean isSulfuras() {
-        return name.equals("Sulfuras, Hand of Ragnaros");
+    public boolean isSulfurs() {
+        return false;
     }
 
     public boolean isBackstage() {
-        return name.equals("Backstage passes to a TAFKAL80ETC concert");
+        return false;
     }
 
     public boolean isAgedBrie() {
-        return name.equals("Aged Brie");
+        return false;
     }
 }
