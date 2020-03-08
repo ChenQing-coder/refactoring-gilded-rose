@@ -7,10 +7,6 @@ public class Sulfurs extends Item {
         super("Sulfuras, Hand of Ragnaros", sellIn, quality);
     }
 
-    public boolean isSulfurs() {
-        return true;
-    }
-
     @Override
     public void updateSellIn() {
         return;
@@ -18,6 +14,11 @@ public class Sulfurs extends Item {
 
     @Override
     public void updateQualityWhenExpiration() {
+        return;
+    }
+
+    @Override
+    public void updateQuality() {
         return;
     }
 }

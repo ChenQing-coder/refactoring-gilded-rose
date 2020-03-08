@@ -7,14 +7,13 @@ public class AgedBrie extends Item {
         super("Aged Brie", sellIn, quality);
     }
 
-    public boolean isAgedBrie() {
-        return true;
+    @Override
+    public void updateQualityWhenExpiration() {
+        increaseOneWhenMoreThan50();
     }
 
     @Override
-    public void updateQualityWhenExpiration() {
-        if (quality < 50) {
-            quality = quality + 1;
-        }
+    public void updateQuality() {
+        quality = quality + 1;
     }
 }

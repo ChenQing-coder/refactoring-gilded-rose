@@ -7,12 +7,23 @@ public class Backstage extends Item {
         super("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
     }
 
-    public boolean isBackstage() {
-        return true;
-    }
-
     @Override
     public void updateQualityWhenExpiration() {
         quality = 0;
     }
+
+    @Override
+    public void updateQuality() {
+        increaseOneWhenMoreThan50();
+
+        if (sellIn < 11) {
+            increaseOneWhenMoreThan50();
+        }
+
+        if (sellIn < 6) {
+            increaseOneWhenMoreThan50();
+        }
+
+    }
+
 }
